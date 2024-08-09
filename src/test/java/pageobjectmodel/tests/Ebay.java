@@ -1,7 +1,6 @@
 package pageobjectmodel.tests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.SearchContext;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.annotations.AfterTest;
@@ -34,7 +33,7 @@ public class Ebay extends TestNGUtil{
         PageEbayHome pageEbayHome = pageBase.initApp("https://www.ebay.com/");
         pageEbayHome.typeOnSearchField("t shirts");
         pageEbayHome.selectCategory("Clothing, Shoes & Accessories");
-        PageClothsResults pageClothsResults = (PageClothsResults) pageEbayHome.clickOnSearchButton();
+        PageClothsResults pageClothsResults = pageEbayHome.clickOnSearchButton();
         pageClothsResults.scroll(0, 200);
         pageClothsResults.clickOnAdidasCheckBox();
         Thread.sleep(3000);
